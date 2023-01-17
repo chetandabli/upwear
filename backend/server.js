@@ -1,15 +1,14 @@
 const express = require("express");
 const cors = require('cors');
 const { connection } = require("./config/db");
+const {userRoute} = require("./routes/user.route")
 const app = express();
 require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res)=>{
-    res.send("yes home page");
-})
+app.use("/user", userRoute);
 
 let port = process.env.port
 app.listen(port, async ()=>{
