@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
+
+*,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* navbar main div */
+#navbar {
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    transition:.5s ease-in
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+  }
+/* navbar logo and menus */
+#navleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_logo {
+    margin-left: 30px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#nav_logo>img {
+    height: 100%;
+}
+
+#nav_menu_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menutitles {
+    height: 58px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 7px;
+}
+
+.menutitles>a {
+    margin-top: 15px;
+    padding: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #282c3f;
+    letter-spacing: .3px;
+    transition: left .2s ease-out, width .2s ease-out;
+    font-weight: 700;
+}
+
+#studionewspan {
+    position: relative;
+    bottom: 5px;
+    padding-left: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #ff3f6c;
+    font-weight: 600;
+}
+
+/* #menstitle{
+    border-bottom: 2px solid #282c3f;
+} */
+#homenlivingdropdowndiv,
+#beautydropdowndiv,
+#womendropdowndiv,
+#kidsdropdowndiv,
+#studiodropdowndiv,
+#mensdropdowndiv {
+    position: absolute;
+    visibility: hidden;
+    top: 60px;
+}
+
+
+/* user profile section in navbar */
+#navright {
+    display: flex;
+}
+
+#nav_profile {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#nav_profile>div {
+    cursor: pointer;
+    transition: .2s linear;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#nav_profile>div:hover {
+    background-color: #f1f1f1;
+}
+
+#cart {
+    padding: 10px 15px;
+    position: relative;
+    margin-right: 15px;
+}
+
+#cartcount {
+    position: absolute;
+    top: 2px;
+    left: 25px;
+    padding: 0px 4px;
+    background-color: #F25511;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+#profile {
+    padding: 10px;
+    position: relative;
+}
+
+#profilemenu {
+    position: absolute;
+    top: 54px;
+    right: -100px;
+    width: 300px;
+    height: auto;
+    max-height: 400px;
+    background-color: #f5f5f6;
+}
+
+#whishlist {
+    padding: 10px;
+}
+
+/* search */
+#nav_search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav_search_innerdiv {
+    margin-right: 15px;
+    height: 40px;
+    display: flex;
+    background-color: #f5f5f6;
+    border-radius: 5px;
+}
+
+#serachbutton {
+    display: flex;
+    padding: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#serachbutton:hover {
+    cursor: pointer;
+    background-color: #d3d3d3;
+}
+
+#searchinputbox {
+    align-items: center;
+    padding: 20px 10px;
+    outline: none;
+    width: 250px;
+    border: none;
+    background-color: #f5f5f6;
+    border-radius: 5px;
+    position: relative;
+}
+
+#searchinputbox {
+    align-items: center;
+    padding: 20px 10px;
+    outline: none;
+    width: 250px;
+    border: none;
+    background-color: #f5f5f6;
+    border-radius: 5px;
+}
+
+#searchinputbox:focus {
+    padding: 19px 9px;
+    border: 1px solid #f5f5f6;
+    background-color: #ffffff;
+}
+
+#searchresults {
+    height: auto;
+    background-color: #f5f5f6;
+    width: 340px;
+    position: absolute;
+    top: 50px;
+}
+
+
+/* ************************************************* ************** footer *********************** ********************************************** */
+
+.footer {
+    background-color: #fafbfc;
+    margin-top: 40px;
+    padding: 0 10%;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+.innerfooter {
+    display: flex;
+}
+
+.innerfooter>div {
+    margin-right: 40px;
+}
+
+.footer .innerfooter>div>a {
+    display: block;
+    margin: 4px;
+    text-decoration: none;
+    color: rgb(85, 83, 83);
+}
+
+.footer .innerfooter>div>p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.footer .innerfooter>div>p {
+    color: black;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.keepintouch {
+    display: flex;
+}
+
+.keepintouch>a {
+    margin-right: 20px;
+}
+
+.stores {
+    width: 134px;
+    height: 45px;
+}
+
+.footerflex {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footerflex div {
+    color: rgb(43, 43, 43);
+    padding: 5px;
+    margin: 2px;
+}
