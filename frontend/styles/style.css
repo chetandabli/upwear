@@ -6,132 +6,78 @@
     font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
-/* navbar main div */
-#navbar{
-    height: 60px;
-    width: 95vw;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+#crousel{
+    width: 100vw;
+    padding-top: 20px;
 }
-/* navbar logo and menus */
-#navleft{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#nav_logo{
-    height: 60px;
-}
-#nav_logo>img{
-    height: 100%;
-}
-#nav_menu_title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.menutitles{
-    height: 58px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto 7px;
-}
-.menutitles>a{
-    margin-top: 15px;
-    padding: 0 10px;
-    text-decoration: none;
-    font-size: 14px;
-    color: #282c3f;
-    letter-spacing: .3px;
-    transition: left .2s ease-out,width .2s ease-out;
-    font-weight: 700;
-}
-#studionewspan{
-    position: relative;
-    bottom: 5px;
-    padding-left: 5px;
-    font-size: 12px;
-    text-decoration: none;
-    color: #ff3f6c;
-    font-weight: 600;
-}
-/* #menstitle{
-    border-bottom: 2px solid #282c3f;
-} */
-#homenlivingdropdowndiv, #beautydropdowndiv, #womendropdowndiv, #kidsdropdowndiv, #studiodropdowndiv, #mensdropdowndiv{
-    position: absolute;
-    visibility: hidden;
-    top: 60px;
-}
-
-
-/* user search and profile section in navbar */
-#navright{
-    display: flex;
-}
-#nav_profile{
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-#nav_profile>div{
-    padding:10px;
-}
-#nav_profile>div>:last-child{
-    font-size: 12px;
-    font-weight: 700;
-}
-#nav_search{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-#nav_search_innerdiv{
-    margin-right: 15px;
-    height: 40px;
-    display: flex;
-    background-color: #f5f5f6;
-    border-radius: 5px;
-}
-#serachbutton{
-    display: flex;
-    padding: 20px 10px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-#serachbutton:hover{
+#crousel>img{
+    width: 100%;
     cursor: pointer;
-    background-color: #d3d3d3;
 }
-#searchinputbox{
-    align-items: center;
-    padding: 20px 10px;
-    outline: none;
-    width: 250px;
-    border: none;
-    background-color: #f5f5f6;
-    border-radius: 5px;
-}
-#searchinputbox{
-    align-items: center;
-    padding: 20px 10px;
-    outline: none;
-    width: 250px;
-    border: none;
-    background-color: #f5f5f6;
-    border-radius: 5px;
-}
-#searchinputbox:focus{
-    padding: 19px 9px;
-    border: 1px solid #f5f5f6;
-    background-color: #ffffff;
+h4{
+    text-transform: uppercase;
+    color: #3e4152;
+    letter-spacing: .15em;
+    font-size: 1.8em;
+    margin: 20px 0 20px 30px;
+    max-height: 5em;
+    font-weight: 700;
 }
 
-
+.oneliner{
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+}
+.oneliner>img{
+    width: 100%;
+    cursor: pointer;
+}
+#twoliner{
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+    gap: 4px;
+}
+#twoliner>img{
+    width: 100%;
+    cursor: pointer;
+}
+#onelinerseven{
+    display: grid;
+    grid-template-columns: repeat(7, 7fr);
+}
+#onelinerseven>img{
+    width: 100%;
+    cursor: pointer;
+}
+#categoryliner{
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+}
+#categoryliner>img{
+    width: 100%;
+    cursor: pointer;
+}
+#topbrand{
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+}
+#topbrand>img{
+    width: 100%;
+    cursor: pointer;
+}
+#bestbuy{
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+}
+#bestbuy>img{
+    width: 100%;
+    cursor: pointer;
+}
+.four{
+    display: grid;
+    grid-template-columns: repeat(4, 4fr);
+}
+.four>img{
+    width: 100%;
+    cursor: pointer;
+}
