@@ -6,7 +6,7 @@ const navbar = ()=>{
     <div id="nav_menu">
         <div id="nav_menu_title">
             <div id="menstitle" class="menutitles">
-                <a href="./men.html">MEN</a>
+                <a href="./mens.html">MEN</a>
                 <div id="mensdropdowndiv">
                     <div>
                         <ul>
@@ -600,8 +600,7 @@ const navbar = ()=>{
             <p>Bag</p>
         </div>
     </div>
-</div>
-<div id="forsticky"></div>`
+</div>`
 }
 
 export { navbar }

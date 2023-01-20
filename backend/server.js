@@ -1,16 +1,19 @@
 const express = require("express");
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const { connection } = require("./config/db");
-const {userRoute} = require("./routes/user.route")
-const {adminRoute} = require("./routes/admin.route")
+const {userRoute} = require("./routes/user.route");
+const {adminRoute} = require("./routes/admin.route");
+const { productRoute } = require("./routes/product.route");
 const app = express();
 require('dotenv').config();
 
-app.use(express.json());
+app.use(bodyParser.json({ limit: "50mb" }))
 app.use(cors());
 
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);
+app.use("/products", productRoute);
 
 let port = process.env.port
 app.listen(port, async ()=>{
