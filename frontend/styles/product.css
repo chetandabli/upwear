@@ -1,0 +1,12 @@
+#mainproduct{
+    display: flex;
+    width: 100%;
+}
+/* filter section */
+#filters{
+    display: block;
+}
+#heading{
+    display: flex;
+    justify-content: space-between;
+}

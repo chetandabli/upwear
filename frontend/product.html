@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping for Women, Men, Kids Fashion & Lifestyle - Upwear</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/product.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="mainproduct">
+        <div id="filters">
+            <div id="heading">
+                <h4>FILTERS</h4>
+                <h6 id="clearfilter"></h6>
+            </div>
+            <div id="filterbycategory">
+                <div>
+                    <input type="radio" name="mens" id="mensfilter" value="mens">
+                    <label for="mens">Men</label>
+                </div>
+                <div>
+                    <input type="radio" name="womens" id="womensfilter" value="womens">
+                    <label for="womens">Women</label>
+                </div>
+                <div>
+                    <input type="radio" name="kids" id="kidsfilter" value="kids">
+                    <label for="kids">Kids</label>
+                </div>
+            </div>
+        </div>
+        <div id="productdata"></div>
+    </div>
+    <div id="footer" class="footer"></div>
+    <script type="module" src="./scr/navbar.js"></script>
+    <script src="./scr/mens.js"></script>
+</body>
+</html>
