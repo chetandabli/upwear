@@ -29,10 +29,10 @@ adminRoute.post("/login", async (req, res) => {
         const token = jwt.sign({adminID:adminID}, process.env.secretKey , { expiresIn: "30m" });
         res.status(200).json({ message: "Login done", token: token, name: adminData.name});
       }else{
-        res.status(404).json({ message: "incorrect credantial" })
+        res.status(404).json({ message: "incorrect credantial" });
       }
     }else{
-      res.status(404).json({ message: "account not exist" })
+      res.status(404).json({ message: "account not exist" });
     }
     
   } catch (error) {
