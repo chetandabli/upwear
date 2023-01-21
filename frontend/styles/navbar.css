@@ -16,7 +16,8 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    transition:.5s ease-in
+    transition:.5s ease-in;
+    z-index: 50;
 }
 
 .sticky {

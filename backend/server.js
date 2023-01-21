@@ -5,6 +5,7 @@ const { connection } = require("./config/db");
 const {userRoute} = require("./routes/user.route");
 const {adminRoute} = require("./routes/admin.route");
 const { productRoute } = require("./routes/product.route");
+const { cartRoute } = require("./routes/cart.route");
 const app = express();
 require('dotenv').config();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);
 app.use("/products", productRoute);
+app.use("/cart", cartRoute)
 
 let port = process.env.port
 app.listen(port, async ()=>{

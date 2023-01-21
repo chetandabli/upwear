@@ -1,0 +1,62 @@
+#loginbox{
+    background-color: #FDEFEC;
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#logininnerbox{
+    height: 80%;
+    width: 400px;
+    margin: auto;
+    background-color: white;
+}
+#logininnerbox>img{
+    width: 100%;
+}
+#mainloginbox{
+    padding: 0 40px;
+}
+#mainloginbox>form>h4{
+    font-size: 24px;
+}
+#mainloginbox>form>input{
+    font-size: 14px;
+    border: 1px solid rgb(202, 202, 202);
+    padding: 8px;
+    width: 300px;
+    margin: 8px 0;
+    outline: none;
+}
+#mainloginbox>form>:last-child{
+    width: 316px;
+}
+
+#loginbutton, #signupbutton{
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: #ff3f6c;
+    border: none;
+    transition: .5s linear;
+}
+#loginbutton:hover, #signupbutton:hover{
+    color: white;
+    cursor: pointer;
+    background-color: #e01c4a;
+}
+#loginbutton::placeholder, #signupbutton::placeholder{
+    color: white;
+}
+#gethelp{
+    font-size: 14px;
+    color: gray;
+    font-weight: 600;
+    padding: 10px 40px;
+}
+#gethelp>span>a{
+    font-size: 14px;
+    color: #ff3f6c;
+    cursor: pointer;
+}
