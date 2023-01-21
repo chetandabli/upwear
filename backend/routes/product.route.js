@@ -6,9 +6,18 @@ const jwt = require('jsonwebtoken');
 
 // productRoute.use(express.json());
 
-productRoute.get('/child', async(req, res)=>{
+productRoute.get('/', async(req, res)=>{
     try {
         const productData = await Productmodel.find()
+        res.json(productData)
+    } catch (error) {
+        console.log(error)
+    }
+});
+productRoute.get('/:productid', async(req, res)=>{
+    let id = req.params.productid
+    try {
+        const productData = await Productmodel.find({"_id": id})
         res.json(productData)
     } catch (error) {
         console.log(error)
