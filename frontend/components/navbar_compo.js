@@ -6,7 +6,7 @@ const navbar = ()=>{
     <div id="nav_menu">
         <div id="nav_menu_title">
             <div id="menstitle" class="menutitles">
-                <a href="./mens.html">MEN</a>
+                <a href="./product.html">MEN</a>
                 <div id="mensdropdowndiv">
                     <div>
                         <ul>
@@ -118,7 +118,7 @@ const navbar = ()=>{
                 </div>
             </div>
             <div id="womantitle" class="menutitles">
-                <a href="./woman.html">WOMEN</a>
+                <a href="./product.html">WOMEN</a>
                 <div id="womendropdowndiv">
                     <div>
                         <ul>
@@ -227,7 +227,7 @@ const navbar = ()=>{
                 </div>
             </div>
             <div id="kidstitle" class="menutitles">
-                <a href="./kids.html">KIDS</a>
+                <a href="./product.html">KIDS</a>
                 <div id="kidsdropdowndiv">
                     <div>
                         <ul>
@@ -332,7 +332,7 @@ const navbar = ()=>{
                 </div>
             </div>
             <div id="homenlivingtitle" class="menutitles">
-                <a href="./homenliving.html">HOME & LIVING</a>
+                <a href="./product.html">HOME & LIVING</a>
                 <div id="homenlivingdropdowndiv">
                     <div>
                         <ul>
@@ -433,7 +433,7 @@ const navbar = ()=>{
                 </div>
             </div>
             <div id="beautytitle" class="menutitles">
-                <a href="./beauty.html">BEAUTY</a>
+                <a href="./product.html">BEAUTY</a>
                 <div id="beautydropdowndiv">
                     <div>
                         <ul>
@@ -542,7 +542,7 @@ const navbar = ()=>{
                 </div>
             </div>
             <div id="studiotitle" class="menutitles">
-                <a href="./studio.html">STUDIO <span id="studionewspan">NEW</span></a>
+                <a href="./product.html">STUDIO <span id="studionewspan">NEW</span></a>
                 <div id="studiodropdowndiv">
                     <img src="#" alt="">
                     <p>Your daily inspiration for everything fashion</p>
@@ -595,7 +595,7 @@ const navbar = ()=>{
                     <path
                         d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6h4z" />
                 </svg>
-                <span id="cartcount">0</span>
+                <span id="cartcount"></span>
             </p>
             <p>Bag</p>
         </div>

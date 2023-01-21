@@ -1,0 +1,167 @@
+#maincarddiv{
+    display: flex;
+}
+
+#cartitemsdiv{
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(5, 5fr);
+    gap: 40px;
+    padding: 30px;
+}
+
+.maindivproduct{
+    height: 350px;
+    transition: .5s linear;
+}
+.maindivproduct:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    cursor: pointer;
+}
+
+.firstdiv{
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.pforrating{
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    bottom: 10px;
+    left: 15px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 2px;
+    padding: 1px 3px;
+}
+.pforrating>span, .pforrating>svg{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.buttondiv{
+    width: 100%;
+    border: none;
+    height: 30px;
+    display: flex;
+}
+
+.deletebtn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(196, 29, 29);
+    transition: .5s linear;
+}
+.deletebtn:hover{
+    border: 1px solid rgb(204, 204, 204);
+    cursor: pointer;
+}
+.deletebtn>p{
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
+.deletebtn>p>svg{
+    margin-right: 3px;
+}
+
+.brandname{
+    font-weight: 700;
+    font-size: 15px;
+    padding: 3px 0 0 10px;
+}
+.subtitle{
+    font-weight: 500;
+    font-size: 12px;
+    padding: 1px 0 0 10px;
+}
+
+.price{
+    padding: 3px 0 0 10px;
+    font-size: 14px; 
+    font-weight: 600;
+}
+.price>:first-child{
+    padding: 0 3px;
+    font-size: 12px; 
+    color: gray;
+    text-decoration: line-through;
+}
+.price>:last-child{
+    font-size: 12px; 
+    color: #ff3f6c;
+}
+
+#cardsummry{
+    width: 25%;
+    padding: 20px;
+    border-left: 1px solid gainsboro;
+}
+#cardsummry>h4{
+    padding: 10px 0;
+}
+
+#cartitemscount{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#cardsummry>div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+#totalmrp{
+    font-size: 14px;
+}
+#knowmore{
+    color: #ff3f6c;
+    font-weight: 600;
+}
+#conviviv{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#convifee{
+    text-decoration: line-through;
+    margin-right: 2px;
+}
+#free{
+    color: green;
+}
+#totalamounttext{
+    font-weight: 800;
+    font-size: 20px;
+    width: 100%;
+    border-top: 1px solid rgb(209, 209, 209);
+    margin-top: 5px;
+}
+
+#orderdone{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: #ff3f6c;
+    border: none;
+    transition: .5s linear;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+#orderdone:hover{
+    background-color:  #e01c4a;
+    cursor: pointer;
+}
