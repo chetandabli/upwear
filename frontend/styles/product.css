@@ -4,9 +4,86 @@
 }
 /* filter section */
 #filters{
+    width: 13%;
     display: block;
+    padding: 10px 20px;
+    border-right: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
 }
 #heading{
     display: flex;
     justify-content: space-between;
+    padding: 15px 0;
 }
+h5{
+padding: 7px 0; 
+}
+
+#filters>div>div{
+    padding: 5px 0;
+    font-size: 14px; 
+}
+#filters>div>div>input{
+    margin-right: 7px;
+    cursor: pointer;
+}
+#filters>div>div>label{
+    cursor: pointer;
+}
+
+#mensfilter, #womensfilter, #kidsfilter{
+    accent-color:#ff3f6c;
+}
+
+#brandfilter>div>input{
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+    accent-color:#ff3f6c;
+}
+#pricefilter>div>input{
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+    accent-color:#ff3f6c;
+}
+#productdata{
+    width: 87%;
+}
+
+#sortbuttondiv{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom:1px solid rgb(247, 247, 247);
+}
+
+#sortbox{
+    display: flex;
+    border: 1px solid rgb(194, 194, 194);
+    width: 220px;
+    height: 30px;
+    padding: 0 10px;
+    margin: 10px 20px 0 0;
+}
+#sortbox>p{
+    width: 30%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sortfun{
+    border: none;
+    width: 70%;
+    font-size: 16px;
+    outline: none;
+    font-weight: 500;
+    
+}
+#sortfun *{
+    padding: 5px;
+    background-color: #dfd4d6;
+}
+

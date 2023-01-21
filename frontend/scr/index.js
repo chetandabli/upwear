@@ -3710,17 +3710,14 @@ let anothernew = [
         "rating_count": "21.4k"
     }
 ]
-//   for(let i = 0; i < newdata.length; i++){
-//     let flag = true;
-//     for(let key in newdata[i]){
-//         if(newdata[i][key] == null){
-//             flag = false
-//         }
-//     }
-//     if(flag == true){
-//         anothernew.push(newdata[i])
-//     }
+let obj = {}
+  for(let i = 0; i < anothernew.length; i++){
+    if(obj[anothernew[i]["title"]] == undefined){
+        obj[anothernew[i]["title"]] = 1
+    }else{
+        obj[anothernew[i]["title"]]++
+    }
     
-//   }
+  }
 
-  console.log(anothernew)
+  console.log(obj)
