@@ -17,6 +17,7 @@
                 <h6 id="clearfilter"></h6>
             </div>
             <div id="filterbycategory">
+                <h5>CATEGORIES</h5>
                 <div>
                     <input type="radio" name="mens" id="mensfilter" value="mens">
                     <label for="mens">Men</label>
@@ -30,11 +31,67 @@
                     <label for="kids">Kids</label>
                 </div>
             </div>
+            <div id="brandfilter">
+                <h5>BRAND</h5>
+                <div>
+                    <input type="checkbox" name="hellcat" id="hellcat">
+                    <label for="hellcat">Hellcat (12)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="anouk" id="anouk">
+                    <label for="anouk">Anouk (10)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="highlander" id="highlander">
+                    <label for="highlander">Highlander (18)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="roadster" id="roadster">
+                    <label for="roadster">Roadster (33)</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="kalini" id="kalini">
+                    <label for="kalini">Kalini (8)</label>
+                </div>
+            </div>
+            <div id="pricefilter">
+                <h5>PRICE</h5>
+                <div>
+                    <input type="checkbox" name="pricebelow500" id="pricebelow500">
+                    <label for="pricebelow500">Below Rs. 500 <span id="pricebelow500span">(65)</span></label>
+                </div>
+                <div>
+                    <input type="checkbox" name="pricebelow2000" id="pricebelow2000">
+                    <label for="pricebelow2000">Rs. 500 to Rs. 1999 <span id="pricebelow2000span">(45)</span></label>
+                </div>
+                <div>
+                    <input type="checkbox" name="pricebelow5000" id="pricebelow5000">
+                    <label for="pricebelow5000">Rs. 2000 to Rs. 4999 <span id="pricebelow5000span">(35)</span></label>
+                </div>
+                <div>
+                    <input type="checkbox" name="pricegre5000" id="pricegre5000">
+                    <label for="pricegre5000">Above Rs. 5000 <span id="pricegre5000span">(85)</span></label>
+                </div>
+            </div>
         </div>
-        <div id="productdata"></div>
+        <div id="productdata">
+            <div id="sortbuttondiv">
+                <div id="sortbox">
+                    <p>Sort By: </p>
+                    <select name="sort" id="sortfun">
+                        <option class="sortoption" value="recommended">Recommended</option>
+                        <option class="sortoption" value="discount">Better Discount</option>
+                        <option class="sortoption" value="lth">Price: Low to High</option>
+                        <option class="sortoption" value="htl">Price: High to Low</option>
+                        <option class="sortoption" value="htlrating">Customer Rating</option>
+                    </select>
+                </div>
+            </div>
+            <div id="products"></div>
+        </div>
     </div>
     <div id="footer" class="footer"></div>
     <script type="module" src="./scr/navbar.js"></script>
-    <script src="./scr/mens.js"></script>
+    <script type="module" src="./scr/product.js"></script>
 </body>
 </html>
