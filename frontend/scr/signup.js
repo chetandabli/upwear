@@ -1,5 +1,5 @@
 import { get, create, verify } from "./sortcuts.js";
-const baseURL = "http://localhost:4800/user";
+const baseURL = "https://gold-lively-peacock.cyclic.app/user";
 
 window.onload = async ()=>{
     let is_login = await verify();

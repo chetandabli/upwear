@@ -2,7 +2,7 @@ import { navbar } from "../components/navbar_compo.js";
 import { footer } from "../components/footer.js"
 import { get } from "./sortcuts.js";
 
-const cartDataURL = "http://localhost:4800/cart"
+const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
 
 get("navbar").innerHTML = navbar();
 get("footer").innerHTML = footer();

@@ -1,6 +1,6 @@
 import { get, create, verify } from "./sortcuts.js";
-const orderHistoryURL = "http://localhost:4800/order";
-const baseURL = "http://localhost:4800/products";
+const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
+const baseURL = "https://gold-lively-peacock.cyclic.app/products";
 
 window.onload = async ()=>{
     let is_login = await verify();

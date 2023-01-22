@@ -1,4 +1,4 @@
-const verifyURL = "http://localhost:4800/cart/verify"
+const verifyURL = "https://gold-lively-peacock.cyclic.app/cart/verify"
 
 const get = (x)=>{
     return document.getElementById(`${x}`)
