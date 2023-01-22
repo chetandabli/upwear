@@ -33,7 +33,6 @@ async function getorderedHistory() {
     } catch (error) {
       console.log("error: ", error);
     }
-    console.log(newcarddata)
     displayData(newcarddata)
   }
 

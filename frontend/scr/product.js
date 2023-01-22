@@ -9,7 +9,6 @@ async function fetchData(x){
     try {
         let data = await fetch(baseURL);
         let acualData = await data.json();
-        console.log(acualData)
         displayData(acualData)
     } catch (error) {
         console.log(error)
@@ -118,7 +117,6 @@ async function addFun(id){
           },
         });
         let data = await res.json();
-        console.log(data)
         if (data.message == "Product Added") {
         //   need to update cart count
         get(`added${id}`).style.backgroundColor = "#ff3f6c";
