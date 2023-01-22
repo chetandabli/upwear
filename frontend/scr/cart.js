@@ -1,7 +1,7 @@
 import { get, create, verify} from "./sortcuts.js";
-const baseURL = "http://localhost:4800/products";
-const cartDataURL = "http://localhost:4800/cart";
-const orderHistoryURL = "http://localhost:4800/order";
+const baseURL = "https://gold-lively-peacock.cyclic.app/products";
+const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart";
+const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
 let productdiv = get("cartitemsdiv")
 
 window.onload = async ()=>{
