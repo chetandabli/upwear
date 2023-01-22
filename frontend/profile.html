@@ -10,7 +10,26 @@
 </head>
 <body>
     <div id="navbar"></div>
-    <div id="footer" class="footer" style="visibility: hidden;"></div>
+    <div id="mainprofilediv">
+        <div id="profilesummery">
+            <h3>Account Details</h3>
+            <p id="nameofuser"></p>
+            <div id="boxofuserdetails">
+                <h4>Overview</h4>
+                <p>EMAIL</p>
+                <p id="emailofuser"></p>
+                <h4>ORDERS</h4>
+                <p id="ordernreturns">Orders & Returns (<span id="ordercount"></span>)</p>
+            </div>
+            <button id="logoutbtn">Logout</button>
+        </div>
+        <div id="orderhistorydiv">
+            <h3>All Orders</h3>
+            <p>From Anytime</p>
+            <div id="ordershistory"></div>
+        </div>
+    </div>
+    <div id="footer" class="footer"></div>
     <script type="module" src="./scr/navbar.js"></script>
     <script type="module" src="./scr/profile.js"></script>
 </body>

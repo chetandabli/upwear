@@ -13,6 +13,9 @@ cartRoute.get("/", async (req, res) => {
       console.log(error)
     }
   });
+cartRoute.get("/verify", async (req, res) => {
+  res.json({message: "verified"})
+});
 
   cartRoute.post("/", async (req, res) => {
     let data = req.body;
@@ -31,6 +34,15 @@ cartRoute.get("/", async (req, res) => {
     try {
       await Cartmodel.findByIdAndDelete(data[0]._id);
       res.status(200).json({message: "Product Deleted"});
+    } catch (error) {
+      console.log(error)
+    }
+  });
+  cartRoute.delete("/", async (req, res) => {
+    let userID = req.body.userID;
+    try {
+      await Cartmodel.deleteMany({userID: userID});
+      res.status(200).json({message: "Product Deleted from cart after ordered"});
     } catch (error) {
       console.log(error)
     }

@@ -7,6 +7,21 @@ body {
     font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
+body::-webkit-scrollbar{
+    width: 5px;
+    
+}
+body::-webkit-scrollbar-butto{
+    width: 5px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #ff3f6c;
+    outline: 1px solid #ff3f6c;
+  }
+
 /* navbar main div */
 #navbar {
     height: 60px;

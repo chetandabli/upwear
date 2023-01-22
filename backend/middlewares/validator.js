@@ -5,10 +5,17 @@ const validator = (req, res, next)=>{
     jwt.verify(token, process.env.secretKey , (err, decoded)=>{
     if(err){
         console.log(err);
-        res.status(404).send({ message: "please login again!" })
+        res.status(404).send({ message: "please login first!" })
     }else{
-        req.body.userID= decoded.userID;
-        next()
+        if(req.body.length){
+            for(let i = 0; i < req.body.length; i++){
+                req.body[i].userID= decoded.userID;
+            }
+            next()
+        }else{
+            req.body.userID= decoded.userID;
+            next()
+        }
     }
   })
 };

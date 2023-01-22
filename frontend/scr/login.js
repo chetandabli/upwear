@@ -1,28 +1,15 @@
-import { get, create } from "./sortcuts.js";
+import { get, create, verify } from "./sortcuts.js";
 const baseURL = "http://localhost:4800/user";
 
-async function getcartItem() {
-    try {
-      const res = await fetch(cartDataURL, {
-        headers: {
-          authorization: `${localStorage.getItem("token")}`,
-        },
-      });
-      let data = await res.json();
-      if(data){
-        return true
+
+  window.onload = async ()=>{
+    let is_login = await verify();
+    if(is_login){
+        location.assign("/profile.html")
       }
-    } catch (error) {
-      console.log("error: ", error);
-      return false
-    }
   }
   
-  let is_login = getcartItem();
-
-  if(is_login){
-    location.assign("/profile.html")
-  }
+ 
 
 get("loginbutton").addEventListener("click", async(e)=>{
     e.preventDefault()
@@ -41,6 +28,7 @@ get("loginbutton").addEventListener("click", async(e)=>{
             alert("Login Done!");
             localStorage.setItem("token", res.token)
             localStorage.setItem("nameofuser", res.name)
+            localStorage.setItem("emailofuser", res.email)
             location.replace("index.html")
         }else{
             alert(res.message)
