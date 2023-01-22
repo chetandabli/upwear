@@ -120,7 +120,10 @@ try {
 </p>`;
     getcartItem()
     }else{
-        alert("there is a issue try again!")
+        alert(data.message)
+        if(data.message == "please login first!"){
+          location.assign("./login.html")
+        }
     }
   } catch (error) {
     console.log("error: ", error);
@@ -147,7 +150,7 @@ setTimeout(() => {
 }, 1000);
 
 function cartrelated(data){
-    get("cartcount").innerText = data.length;
+    get("cartcount").innerText = data.length || "";
     for(let i = 0; i < data.length; i++){
         get(`added${data[i].productid}`).innerHTML = `<p>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">

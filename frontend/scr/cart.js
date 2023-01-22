@@ -1,11 +1,37 @@
 import { get, create } from "./sortcuts.js";
 const baseURL = "http://localhost:4800/products";
+const cartDataURL = "http://localhost:4800/cart";
+const orderHistoryURL = "http://localhost:4800/order";
 let productdiv = get("cartitemsdiv")
 
-const cartDataURL = "http://localhost:4800/cart"
+async function checklogin() {
+  try {
+    const res = await fetch(cartDataURL, {
+      headers: {
+        authorization: `${localStorage.getItem("token")}`,
+      },
+    });
+    let data = await res.json();
+    if(data){
+      return true
+    }
+  } catch (error) {
+    console.log("error: ", error);
+    return false
+  }
+}
+
+let is_login = checklogin();
+
+if(!is_login){
+  location.assign("/login.html")
+}
+
+let rowData;
+let newcarddata = []
 
 async function getcartItem() {
-    let newcarddata = []
+    newcarddata = []
     try {
       const res = await fetch(cartDataURL, {
         headers: {
@@ -13,6 +39,7 @@ async function getcartItem() {
         },
       });
       let data = await res.json();
+      rowData = data
       for(let i = 0; i < data.length; i++){
         let id = data[i]["productid"]
         let carddata = await fetchData(id)
@@ -36,7 +63,7 @@ async function getcartItem() {
 
   function displayData(data){
     productdiv.innerHTML = "";
-    get("cartcount").innerText = data.length;
+    get("cartcount").innerText = data.length || "";
     get("cartitemscount").innerText = `(${data.length} item)`
     let sum = 0;
     data.forEach(el => {
@@ -110,4 +137,53 @@ async function deletedata(id){
     if(res.ok){
         getcartItem()
     }
+  }
+
+get("orderdone").addEventListener("click", async()=>{
+  let ordredData = [];
+  for(let i = 0; i < rowData.length; i++){
+    let tempobj = {
+      productid: rowData[i].productid
+    }
+    ordredData.push(tempobj)
+  }
+  let respose = await addtohistory(ordredData)
+  if(respose.message == "order placed"){
+    let deleteCartitemofterorder = await deleteCartitemofterorderdone();
+    if(deleteCartitemofterorder.message == "Product Deleted from cart after ordered"){
+      alert(respose.message);
+      location.assign("/index.html")
+    }
+  }else{
+    alert(respose.message)
+  }
+})
+
+async function addtohistory(data){
+  try {
+      let res = await fetch(orderHistoryURL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `${localStorage.getItem("token")}`,
+        },
+      });
+      res = await res.json();
+      return res
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  }
+
+  async function deleteCartitemofterorderdone(){
+    let res=await fetch(cartDataURL, {
+      method:"DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `${localStorage.getItem("token")}`,
+      }
+    });
+    res = res.json();
+    return res
   }

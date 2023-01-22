@@ -128,6 +128,7 @@
 #knowmore{
     color: #ff3f6c;
     font-weight: 600;
+    cursor: pointer;
 }
 #conviviv{
     display: flex;
