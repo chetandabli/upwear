@@ -27,7 +27,7 @@ userRoute.post("/login", async (req, res) => {
       let userID=userData._id
       if(is_correct){
         const token = jwt.sign({userID:userID}, process.env.secretKey , { expiresIn: "1h" });
-        res.status(200).json({ message: "Login done", token: token, name: userData.name});
+        res.status(200).json({ message: "Login done", token: token, name: userData.name, email: userData.email});
       }else{
         res.status(404).json({ message: "incorrect credantial" })
       }
