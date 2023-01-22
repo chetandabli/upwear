@@ -59,7 +59,19 @@
     font-size: 14px;
     border-bottom:1px solid rgb(194, 194, 194);
 }
-
+#logoutbtn{
+    background-color:#ff3f6c;
+    border: none;
+    height: 30px;
+    width: 100%;
+    font-weight: 600;
+    transition: .5s linear;
+}
+#logoutbtn:hover{
+    background-color:#ec0037;
+    color: #fff;
+    cursor: pointer;
+}
 /* append data */
 .maindiv{
     padding: 5px 15px;
@@ -107,4 +119,22 @@
 .date{
     font-size: 14px;
     font-weight: 500;
+}
+
+.productdetails{
+    display: flex;
+    padding: 5px 30px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+.productdetails>img{
+    width: 70px;
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.productdetails>div{
+    display: block;
+    justify-content: center;
+    align-items: center;
 }

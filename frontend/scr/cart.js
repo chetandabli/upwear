@@ -136,7 +136,7 @@ get("orderdone").addEventListener("click", async()=>{
     let deleteCartitemofterorder = await deleteCartitemofterorderdone();
     if(deleteCartitemofterorder.message == "Product Deleted from cart after ordered"){
       alert(respose.message);
-      location.assign("/index.html")
+      location.assign("/profile.html")
     }
   }else{
     alert(respose.message)

@@ -52,7 +52,7 @@ async function getorderedHistory() {
 function displayData(data){
     get("ordershistory").innerHTML = "";
     get("ordercount").innerHTML = data.length
-    let i = 0
+    let i = 0;
     data.forEach(el => {
         let maindiv = create("div");
         maindiv.classList = "maindiv";
@@ -82,11 +82,36 @@ function displayData(data){
           </svg>`
         }
         
+        let productdetails = create("div");
+        productdetails.classList = "productdetails"
+        let proimg = create("img");
+        proimg.src = el.images;
+
+        let newinsiderdiv = create("div")
+        let title = create("h4");
+        title.innerText = el.title;
+
+        let subtitle = create("p");
+        subtitle.innerText = el.subtitle;
+
+        let size = create("p");
+        size.innerText = `${el.size[0]} & Above`
+
+        newinsiderdiv.append(title, subtitle, size)
+
+        productdetails.append(proimg, newinsiderdiv)
 
         topinnerdiv.append(status, date)
 
+        
+
         topdiv.append(svg, topinnerdiv);
-        maindiv.append(topdiv);
+        maindiv.append(topdiv, productdetails);
         get("ordershistory").append(maindiv)
     });
   }
+
+  get("logoutbtn").addEventListener("click", ()=>{
+    localStorage.clear();
+    location.replace("/index.html")
+  })
