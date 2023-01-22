@@ -35,7 +35,7 @@ async function getcartItem() {
       },
     });
     let data = await res.json();
-    get("cartcount").innerText = data.length;
+    get("cartcount").innerText = data.length || "";
   } catch (error) {
     console.log("error: ", error);
   }
