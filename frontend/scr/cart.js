@@ -1,30 +1,14 @@
-import { get, create } from "./sortcuts.js";
+import { get, create, verify} from "./sortcuts.js";
 const baseURL = "http://localhost:4800/products";
 const cartDataURL = "http://localhost:4800/cart";
 const orderHistoryURL = "http://localhost:4800/order";
 let productdiv = get("cartitemsdiv")
 
-async function checklogin() {
-  try {
-    const res = await fetch(cartDataURL, {
-      headers: {
-        authorization: `${localStorage.getItem("token")}`,
-      },
-    });
-    let data = await res.json();
-    if(data){
-      return true
-    }
-  } catch (error) {
-    console.log("error: ", error);
-    return false
+window.onload = async ()=>{
+  let is_login = await verify();
+  if(!is_login){
+      location.assign("/login.html")
   }
-}
-
-let is_login = checklogin();
-
-if(!is_login){
-  location.assign("/login.html")
 }
 
 let rowData;

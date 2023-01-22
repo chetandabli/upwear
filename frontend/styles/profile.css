@@ -1,0 +1,110 @@
+#mainprofilediv{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+
+#profilesummery{
+    width: 15%;
+    margin-left: 10px;
+    border-right: 1px solid rgb(194, 194, 194);
+    padding: 20px;
+}
+#profilesummery>h3{
+    margin: 10px 0;
+}
+
+#nameofuser, #emailofuser, #ordernreturns{
+    font-weight: 600;
+    color:  #ff3f6c;
+    margin-bottom: 20px;
+}
+
+#boxofuserdetails{
+    margin: 10px 0;
+}
+#boxofuserdetails>p{
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+#orderhistorydiv{
+    width: 85%;
+}
+#ordershistory{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    max-height: 90%;
+    background-color: #f2f2f2;
+}
+#ordershistory::-webkit-scrollbar{
+    width: 3px;
+    
+}
+#ordershistory::-webkit-scrollbar-butto{
+    width: 3px;
+}
+#ordershistory::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+#ordershistory::-webkit-scrollbar-thumb {
+    background-color: #4e3f43;
+    outline: 1px solid #4e3f43;
+}
+#orderhistorydiv>:nth-child(1){
+    padding: 20px 0 0 20px;
+}
+#orderhistorydiv>:nth-child(2){
+    padding: 0 0 20px 20px;
+    font-size: 14px;
+    border-bottom:1px solid rgb(194, 194, 194);
+}
+
+/* append data */
+.maindiv{
+    padding: 5px 15px;
+    margin: 5px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.topdiv{
+    display: flex;
+}
+.svg{
+    background-color:#ff3f6c;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.svgcomplated{
+    background-color:rgb(3, 166, 133);
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.topinnerdiv{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.delivered{
+    color: rgb(3, 166, 133)
+}
+.undelivered{
+    color: #ff3f6c;
+}
+.date{
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -1,4 +1,4 @@
-import { get, create } from "./sortcuts.js";
+import { get, create, verify } from "./sortcuts.js";
 const baseURL = "http://localhost:4800/products";
 const cartDataURL = "http://localhost:4800/cart"
 
@@ -92,42 +92,56 @@ function displayData(data){
 };
 
 async function addWish(id){
-    get(id).style.backgroundColor = "rgb(202, 202, 202)";
+  window.onload = async ()=>{
+    let is_login = await verify();
+    if(is_login){
+      get(id).style.backgroundColor = "rgb(202, 202, 202)";
     get(id).innerHTML = `<p><svg xmlns="http://www.w3.org/2000/svg" style="color: #ff3f6c;"  width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
   </svg>WISHLISTED</p>`
+      }else{
+        location.assign("/login.html")
+      }
+  } 
+    
 }
 async function addFun(id){
-try {
-    const res = await fetch(cartDataURL, {
-      method: "POST",
-      body: JSON.stringify({"productid": id}),
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `${localStorage.getItem("token")}`,
-      },
-    });
-    let data = await res.json();
-    console.log(data)
-    if (data.message == "Product Added") {
-    //   need to update cart count
-    get(`added${id}`).style.backgroundColor = "#ff3f6c";
-    get(`added${id}`).innerHTML = `<p>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-</svg>
-      ADDED
-</p>`;
-    getcartItem()
-    }else{
-        alert(data.message)
-        if(data.message == "please login first!"){
-          location.assign("./login.html")
+    let is_login = await verify();
+    if(is_login){
+      try {
+        const res = await fetch(cartDataURL, {
+          method: "POST",
+          body: JSON.stringify({"productid": id}),
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `${localStorage.getItem("token")}`,
+          },
+        });
+        let data = await res.json();
+        console.log(data)
+        if (data.message == "Product Added") {
+        //   need to update cart count
+        get(`added${id}`).style.backgroundColor = "#ff3f6c";
+        get(`added${id}`).innerHTML = `<p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+    </svg>
+          ADDED
+    </p>`;
+        getcartItem()
+        }else{
+            alert(data.message)
+            if(data.message == "please login first!"){
+              location.assign("./login.html")
+            }
         }
-    }
-  } catch (error) {
-    console.log("error: ", error);
-  }
+      } catch (error) {
+        console.log("error: ", error);
+      }
+      }else{
+        location.assign("/login.html")
+      }
+
 }
 
 // fetching cart items;
