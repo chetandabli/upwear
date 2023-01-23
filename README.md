@@ -4,6 +4,8 @@ Hello everyone, this is a Readme for my construct week project that has been com
 
 ### live link: https://extraordinary-pavlova-536bcb.netlify.app/
 
+##### blog link: https://medium.com/@chetandabli/upwear-solo-project-5f7955b216b2
+
 <img src="https://extraordinary-pavlova-536bcb.netlify.app/img/logo.png">
 
 ## Tech-Stack:
