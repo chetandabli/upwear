@@ -2,9 +2,13 @@
 
 Hello everyone, this is a Readme for my construct week project that has been completed successfully within the duration of 5 days. It was a solo project. I've made the website with reference from myntra.com . I've created Home page , Signup page , Login page, profile and upwear products page.
 
-### live link: https://extraordinary-pavlova-536bcb.netlify.app/
+### Live Links
 
-##### blog link: https://medium.com/@chetandabli/upwear-solo-project-5f7955b216b2
+- [Frontend](https://extraordinary-pavlova-536bcb.netlify.app/)
+
+- [Backend](https://gold-lively-peacock.cyclic.app/products)
+
+- [Blog](https://medium.com/@chetandabli/upwear-solo-project-5f7955b216b2)
 
 <img src="https://extraordinary-pavlova-536bcb.netlify.app/img/logo.png">
 
