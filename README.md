@@ -37,7 +37,7 @@ Hello everyone, this is a Readme for my construct week project that has been com
     -User have to create account before login
     -User can see profile page for account details and order history
     
-# Glimpse and Screenshots of my cloned website:
+# Glimpse and Screenshots of this project website:
 
 ## A. Homepage
 
