@@ -25,8 +25,9 @@ let port = process.env.port
 app.listen(port, async ()=>{
     try {
         await connection;
-        console.log("server is running at port", port);
+        console.log("db connection ");
     } catch (error) {
         console.log("error eccures: ", error);
     }
+    console.log("server running at 4800")
 })

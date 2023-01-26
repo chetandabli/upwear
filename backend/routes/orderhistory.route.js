@@ -23,4 +23,24 @@ orderhistoryRoute.get("/", async (req, res) => {
     }
   });
 
+  orderhistoryRoute.delete("/:id", async(req, res)=>{
+    let id=req.params.id
+    try {
+      await Orderhistorymodel.findByIdAndDelete(id);
+      res.json({"message": "deleted"})
+    } catch (error) {
+      res.send({"error":error.message})
+    }
+  })
+  orderhistoryRoute.patch("/:id", async(req, res)=>{
+    let id=req.params.id;
+    let rate = req.body.rating;
+    try {
+      await Orderhistorymodel.findByIdAndUpdate(id, {rate: rate});
+      res.json({"message": "updated"})
+    } catch (error) {
+      res.send({"error":error.message})
+    }
+  })
+
   module.exports = { orderhistoryRoute };
