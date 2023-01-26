@@ -138,3 +138,28 @@
     justify-content: center;
     align-items: center;
 }
+
+.star{
+    display: flex;
+    padding: 10px;
+}
+.star>p{
+    font-size: 24px;
+    margin: 0 5px;
+    color: #ec0037;
+    cursor: pointer;
+}
+.cancelbtn{
+    margin: 5px; 
+    padding: 5px 10px;
+    border: none;
+    background-color: #ec0037;
+    transition: .1s linear;
+    font-weight: 600;
+}
+.cancelbtn:hover{
+    cursor: pointer;
+    background-color: #ff003c;
+    color: #f2f2f2;
+    visibility: visible;
+}

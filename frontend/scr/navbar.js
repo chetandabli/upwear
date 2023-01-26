@@ -1,8 +1,6 @@
 import { navbar } from "../components/navbar_compo.js";
 import { footer } from "../components/footer.js"
-import { get } from "./sortcuts.js";
-
-const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
+import { get, create, verify, getcartItem } from "./sortcuts.js";
 
 get("navbar").innerHTML = navbar();
 get("footer").innerHTML = footer();
@@ -14,7 +12,7 @@ get("cart").onclick = ()=>{
     location.assign("/cart.html")
 }
 get("profile").onclick = ()=>{
-    location.assign("/login.html")
+    location.assign("/profile.html")
 }
 
 let top = get("navbar").offsetTop;
@@ -27,19 +25,15 @@ function stickynavbar() {
 }
 window.addEventListener('scroll', stickynavbar);
 
-async function getcartItem() {
-  try {
-    const res = await fetch(cartDataURL, {
-      headers: {
-        authorization: `${localStorage.getItem("token")}`,
-      },
-    });
-    let data = await res.json();
-    get("cartcount").innerText = data.length || "";
-  } catch (error) {
-    console.log("error: ", error);
+window.onload = async ()=>{
+  let is_login = await verify();
+  if(is_login){
+    getcartItem();
+  }else{
+    if(location.pathname == "/profile.html" || location.pathname == "/profile.html"){
+      location.assign("/login.html")
+    }
   }
 }
 
-getcartItem()
 

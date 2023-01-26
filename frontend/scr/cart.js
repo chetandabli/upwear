@@ -1,15 +1,8 @@
-import { get, create, verify} from "./sortcuts.js";
+import { get, create} from "./sortcuts.js";
 const baseURL = "https://gold-lively-peacock.cyclic.app/products";
 const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart";
 const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
 let productdiv = get("cartitemsdiv")
-
-window.onload = async ()=>{
-  let is_login = await verify();
-  if(!is_login){
-      location.assign("/login.html")
-  }
-}
 
 let rowData;
 let newcarddata = []
@@ -43,7 +36,7 @@ async function getcartItem() {
         console.log(error)
     }
 }
-  getcartItem()
+getcartItem()
 
   function displayData(data){
     productdiv.innerHTML = "";
@@ -168,6 +161,6 @@ async function addtohistory(data){
         authorization: `${localStorage.getItem("token")}`,
       }
     });
-    res = res.json();
+    res = await res.json();
     return res
   }
