@@ -1,4 +1,5 @@
 const verifyURL = "https://gold-lively-peacock.cyclic.app/cart/verify"
+const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
 
 const get = (x)=>{
     return document.getElementById(`${x}`)
@@ -7,7 +8,7 @@ const create = (x)=>{
     return document.createElement(`${x}`)
 }
 
-const verify= async()=>{
+const verify = async()=>{
     try {
       const res = await fetch(verifyURL, {
         headers: {
@@ -18,7 +19,8 @@ const verify= async()=>{
       let data = await res.json();
       if(data.message == "verified"){
         return true
-      }else{
+      }else if(data.message == "please login first!"){
+        console.log("yes")
         return false
       }
     } catch (error) {
@@ -27,8 +29,23 @@ const verify= async()=>{
     }
   }
 
+  async function getcartItem() {
+    try {
+      const res = await fetch(cartDataURL, {
+        headers: {
+          authorization: `${localStorage.getItem("token")}`,
+        },
+      });
+      let data = await res.json();
+      get("cartcount").innerText = data.length || "";
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  }
+
 export {
     get,
     create,
-    verify
+    verify,
+    getcartItem
 }
