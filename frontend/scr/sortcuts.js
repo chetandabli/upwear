@@ -37,6 +37,7 @@ const verify = async()=>{
         },
       });
       let data = await res.json();
+      get("nameonnavbar").innerText = localStorage.getItem("nameofuser") || "Login"
       get("cartcount").innerText = data.length || "";
     } catch (error) {
       console.log("error: ", error);
