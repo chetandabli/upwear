@@ -79,7 +79,8 @@ You can see the order summary and the product that is added to the cart and you 
 
 ## G. Profile
 
-user can see their account details and order history on this page and also user can log out from here.
+- user can see their account details and order history on this page and also user can log out from here.
+- user can cancel pending orders or rate the product if order is delivered.
 
 <img src="https://miro.medium.com/max/720/1*0AR1rtBd0qLiB4kgLsCG3Q.webp">
 
