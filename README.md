@@ -86,4 +86,3 @@ You can see the order summary and the product that is added to the cart and you 
 
 So thanks for reading this blog. this is all about this project.
 
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=chetandabli&label=Page%20views&color=0e75b6&style=flat" alt="chetandabli" /> </p>
