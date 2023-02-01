@@ -75,7 +75,7 @@ This is the Product page of our website, Users must be logged in on our website 
 
 You can see the order summary and the product that is added to the cart and you can place an order from here.
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LQeIkq5GXeroLdFyqBHi5w.png">
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KjAchvbBCYzkBKG60cS05A.png">
 
 ## G. Profile
 
