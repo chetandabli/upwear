@@ -84,5 +84,5 @@ You can see the order summary and the product that is added to the cart and you 
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*LQeIkq5GXeroLdFyqBHi5w.png">
 
-So thanks for reading this blog. this is all about this project.
+So thanks for reading this. this is all about this project.
 
