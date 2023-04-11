@@ -6,13 +6,13 @@ get("navbar").innerHTML = navbar();
 get("footer").innerHTML = footer();
 
 get("nav_logo").onclick = ()=>{
-    location.assign("/index.html")
+    location.assign("./index.html")
 }
 get("cart").onclick = ()=>{
-    location.assign("/cart.html")
+    location.assign("./cart.html")
 }
 get("profile").onclick = ()=>{
-    location.assign("/profile.html")
+    location.assign("./profile.html")
 }
 
 let top = get("navbar").offsetTop;
@@ -30,8 +30,8 @@ window.onload = async ()=>{
   if(is_login){
     getcartItem();
   }else{
-    if(location.pathname == "/profile.html" || location.pathname == "/profile.html"){
-      location.assign("/login.html")
+    if(location.pathname == "./profile.html" || location.pathname == "/profile.html"){
+      location.assign("./login.html")
     }
   }
 }

@@ -4,47 +4,31 @@ const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart";
 const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
 let productdiv = get("cartitemsdiv")
 
-let rowData;
-let newcarddata = []
-
-async function getcartItem() {
-    newcarddata = []
-    try {
-      const res = await fetch(cartDataURL, {
-        headers: {
-          authorization: `${localStorage.getItem("token")}`,
-        },
-      });
-      let data = await res.json();
-      rowData = data
-      for(let i = 0; i < data.length; i++){
-        let id = data[i]["productid"]
-        let carddata = await fetchData(id)
-        newcarddata.push(...carddata)
-      }
-    } catch (error) {
-      console.log("error: ", error);
+const fetchCartData = async()=>{
+  try {
+    const res = await fetch(cartDataURL, {
+      headers: {
+        authorization: `${localStorage.getItem("token")}`,
+      },
+    });
+    let data = await res.json();
+    if(data.message == "please login first!"){
+      location.assign("./login.html")
+    }else{
+      displayData(data)
     }
-    displayData(newcarddata)
+  } catch (error) {
+    console.log(error)
   }
-  async function fetchData(id){
-    try {
-        let data = await fetch(`${baseURL}/${id}`);
-        let acualData = await data.json();
-        return acualData
-    } catch (error) {
-        console.log(error)
-    }
 }
-getcartItem()
-
+fetchCartData()
   function displayData(data){
     productdiv.innerHTML = "";
     get("cartcount").innerText = data.length || "";
     get("cartitemscount").innerText = `(${data.length} item)`
     let sum = 0;
     data.forEach(el => {
-        sum += el.discounted_price
+        sum += +el.discounted_price
         let maindiv = create("div");
         maindiv.classList = "maindivproduct"
 
@@ -112,7 +96,7 @@ async function deletedata(id){
       }
     });
     if(res.ok){
-        getcartItem()
+      fetchCartData()
     }
   }
 
