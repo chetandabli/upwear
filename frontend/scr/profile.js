@@ -1,46 +1,32 @@
 import { get, create, verify, getcartItem } from "./sortcuts.js";
 const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
-const baseURL = "https://gold-lively-peacock.cyclic.app/products";
 
-  get("nameofuser").innerText = localStorage.getItem("nameofuser");
-  get("emailofuser").innerText = localStorage.getItem("emailofuser");
-
-let rowData;
-let newcarddata = []
-
-async function getorderedHistory() {
-    newcarddata = []
-    try {
-      const res = await fetch(orderHistoryURL, {
-        headers: {
-          authorization: `${localStorage.getItem("token")}`,
-        },
-      });
-      let data = await res.json();
-      rowData = data.reverse();
-      for(let i = 0; i < data.length; i++){
-        let id = data[i]["productid"]
-        let carddata = await fetchData(id);
-        carddata[0].orderid = rowData[i]._id;
-        carddata[0].rating = rowData[i].rate;
-        newcarddata.push(...carddata)
-      }
-    } catch (error) {
-      console.log("error: ", error);
-    }
-    displayData(newcarddata)
-  }
-
-  async function fetchData(id){
-    try {
-        let data = await fetch(`${baseURL}/${id}`);
-        let acualData = await data.json();
-        return acualData
-    } catch (error) {
-        console.log(error)
-    }
+if(!localStorage.getItem("nameofuser")){
+  location.assign("./login.html")
 }
 
+get("nameofuser").innerText = localStorage.getItem("nameofuser");
+get("emailofuser").innerText = localStorage.getItem("emailofuser");
+
+
+const fetchOrderData = async()=>{
+  try {
+    const res = await fetch(orderHistoryURL, {
+      headers: {
+        authorization: `${localStorage.getItem("token")}`,
+      },
+    });
+    let data = await res.json();
+    if(data.message == "please login first!"){
+      location.assign("./login.html")
+    }else{
+      displayData(data)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+fetchOrderData()
 function displayData(data){
     get("ordershistory").innerHTML = "";
     get("ordercount").innerHTML = data.length;
@@ -57,7 +43,7 @@ function displayData(data){
         let status = create("p");
         let date = create("p");
         date.classList = "date"
-        date.innerText = `On ${new Date(rowData[i].createdAt).toString().slice(0, 21)}`
+        date.innerText = `On ${new Date(data[i].createdAt).toString().slice(0, 21)}`
         
         let productdetails = create("div");
         productdetails.classList = "productdetails"
@@ -82,7 +68,7 @@ function displayData(data){
 
         let buttomdiv = create("div");
         buttomdiv.classList = "buttomdiv";
-        if(rowData[i++].is_delivered){
+        if(data[i++].is_delivered){
           status.innerText = "Delivered";
           status.classList = "delivered";
           svg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
@@ -136,31 +122,31 @@ function displayData(data){
             s5.innerHTML = "&#9733";
           }
           star.onmouseleave = ()=>{
-            if(el.rating == 0){
+            if(el.rate == 0){
               s1.innerHTML = "&#9734";
               s2.innerHTML = "&#9734";
               s3.innerHTML = "&#9734";
               s4.innerHTML = "&#9734";
               s5.innerHTML = "&#9734";
-            }else if(el.rating == 1){
+            }else if(el.rate == 1){
               s1.innerHTML = "&#9733";
               s2.innerHTML = "&#9734";
               s3.innerHTML = "&#9734";
               s4.innerHTML = "&#9734";
               s5.innerHTML = "&#9734";
-            }else if(el.rating == 2){
+            }else if(el.rate == 2){
               s1.innerHTML = "&#9733";
               s2.innerHTML = "&#9733";
               s3.innerHTML = "&#9734";
               s4.innerHTML = "&#9734";
               s5.innerHTML = "&#9734";
-            }else if(el.rating == 3){
+            }else if(el.rate == 3){
               s1.innerHTML = "&#9733";
               s2.innerHTML = "&#9733";
               s3.innerHTML = "&#9733";
               s4.innerHTML = "&#9734";
               s5.innerHTML = "&#9734";
-            }else if(el.rating == 4){
+            }else if(el.rate == 4){
               s1.innerHTML = "&#9733";
               s2.innerHTML = "&#9733";
               s3.innerHTML = "&#9733";
@@ -174,32 +160,32 @@ function displayData(data){
               s5.innerHTML = "&#9733";
             }
           }
-          if(el.rating == 0){
+          if(el.rate == 0){
             s1.innerHTML = "&#9734";
             s2.innerHTML = "&#9734";
             s3.innerHTML = "&#9734";
             s4.innerHTML = "&#9734";
             s5.innerHTML = "&#9734";
-          }else if(el.rating == 1){
+          }else if(el.rate == 1){
             s1.innerHTML = "&#9733";
             
             s2.innerHTML = "&#9734";
             s3.innerHTML = "&#9734";
             s4.innerHTML = "&#9734";
             s5.innerHTML = "&#9734";
-          }else if(el.rating == 2){
+          }else if(el.rate == 2){
             s1.innerHTML = "&#9733";
             s2.innerHTML = "&#9733";
             s3.innerHTML = "&#9734";
             s4.innerHTML = "&#9734";
             s5.innerHTML = "&#9734";
-          }else if(el.rating == 3){
+          }else if(el.rate == 3){
             s1.innerHTML = "&#9733";
             s2.innerHTML = "&#9733";
             s3.innerHTML = "&#9733";
             s4.innerHTML = "&#9734";
             s5.innerHTML = "&#9734";
-          }else if(el.rating == 4){
+          }else if(el.rate == 4){
             s1.innerHTML = "&#9733";
             s2.innerHTML = "&#9733";
             s3.innerHTML = "&#9733";
@@ -213,19 +199,19 @@ function displayData(data){
             s5.innerHTML = "&#9733";
           }
           s1.onclick = ()=>{
-            updaterating(el.orderid, 1);
+            updaterating(el._id, 1);
           }
           s2.onclick = ()=>{
-            updaterating(el.orderid, 2);
+            updaterating(el._id, 2);
           }
           s3.onclick = ()=>{
-            updaterating(el.orderid, 3);
+            updaterating(el._id, 3);
           }
           s4.onclick = ()=>{
-            updaterating(el.orderid, 4);
+            updaterating(el._id, 4);
           }
           s5.onclick = ()=>{
-            updaterating(el.orderid, 5);
+            updaterating(el._id, 5);
           }
           star.append(s1, s2, s3, s4, s5);
           star.classList = "star";
@@ -250,7 +236,7 @@ function displayData(data){
           cnfbtn.classList = "cancelbtn";
           cnfbtn.style.visibility = "hidden";
           cnfbtn.onclick = ()=>{
-            cancelorder(el.orderid)
+            cancelorder(el._id)
           }
           cnfnobtn.innerText = "No";
           cnfnobtn.classList = "cancelbtn";
@@ -268,7 +254,6 @@ function displayData(data){
         get("ordershistory").append(maindiv)
     });
   }
-  getorderedHistory()
   get("logoutbtn").addEventListener("click", ()=>{
     localStorage.clear();
     location.replace("/index.html")
@@ -284,7 +269,7 @@ async function cancelorder(id){
       }
     });
     res = await res.json();
-    getorderedHistory()
+    fetchOrderData()
   } catch (error) {
     console.log(error);
   }
@@ -304,7 +289,7 @@ async function updaterating(id, data){
       }
     });
     res = await res.json();
-    getorderedHistory()
+    fetchOrderData()
   } catch (error) {
     console.log(error);
   }

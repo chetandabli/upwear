@@ -4,12 +4,16 @@ const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
 
 let productdiv = get("products");
 
+let currentData;
+
 // fetching all data!
 async function fetchData(x){
     try {
         let data = await fetch(baseURL);
         let acualData = await data.json();
-        displayData(acualData)
+        displayData(acualData);
+        console.log(acualData)
+        currentData = acualData;
     } catch (error) {
         console.log(error)
     }
@@ -172,3 +176,7 @@ function cartrelated(data){
     </p>`
     }
 }
+
+get("sortfun").addEventListener("change", ()=>{
+  console.log("x")
+})

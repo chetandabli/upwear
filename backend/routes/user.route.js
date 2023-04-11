@@ -1,12 +1,10 @@
 const userRoute = require("express").Router();
 const { Registerationmodel } = require("../models/User.model");
-const express = require("express");
 const { hashing } = require("../middlewares/hashing")
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 
-userRoute.use(express.json());
-
+// User registration endpoint
 userRoute.post("/register", hashing, async (req, res) => {
   let { name, email, password } = req.body;
   try {
@@ -18,6 +16,8 @@ userRoute.post("/register", hashing, async (req, res) => {
     res.status(404).json({ message: "Resgistration not complated" })
   }
 });
+
+// User login endpoint
 userRoute.post("/login", async (req, res) => {
   let { email, password } = req.body;
   try {
@@ -42,4 +42,3 @@ userRoute.post("/login", async (req, res) => {
 });
 
 module.exports = { userRoute };
-

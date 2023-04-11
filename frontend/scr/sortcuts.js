@@ -20,7 +20,6 @@ const verify = async()=>{
       if(data.message == "verified"){
         return true
       }else if(data.message == "please login first!"){
-        console.log("yes")
         return false
       }
     } catch (error) {

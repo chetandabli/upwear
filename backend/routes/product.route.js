@@ -1,11 +1,9 @@
+// Import required modules
 const productRoute = require("express").Router();
 const { Productmodel } = require("../models/Product.model");
 const { adminAuth } = require("../middlewares/adminAuth")
-const express = require("express");
-const jwt = require('jsonwebtoken');
 
-// productRoute.use(express.json());
-
+// Get all products
 productRoute.get('/', async(req, res)=>{
     try {
         const productData = await Productmodel.find()
@@ -14,6 +12,8 @@ productRoute.get('/', async(req, res)=>{
         console.log(error)
     }
 });
+
+// Get a specific product by ID
 productRoute.get('/:productid', async(req, res)=>{
     let id = req.params.productid
     try {
@@ -24,7 +24,10 @@ productRoute.get('/:productid', async(req, res)=>{
     }
 });
 
+// Protected route - only accessible by admin
 productRoute.use(adminAuth);
+
+// Create a new product
 productRoute.post("/post",async(req, res)=>{
     try {
         const data = await Productmodel.insertMany(req.body);
@@ -37,6 +40,7 @@ productRoute.post("/post",async(req, res)=>{
     }
 })
 
+// Export the productRoute
 module.exports = {
     productRoute
 }
