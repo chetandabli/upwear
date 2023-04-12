@@ -12,45 +12,94 @@ Hello everyone, this is a Readme for my construct week project that has been com
 
 <img src="https://extraordinary-pavlova-536bcb.netlify.app/img/logo.png">
 
-## Tech-Stack:
+## Features
 
-    a. HTML (structuring)
+- **Authentication:** The project includes JWT-based authentication to secure user data.
+- **Authorization:** The project includes role-based authorization to restrict access to certain routes or functionality.
+- **Cross-platform compatibility:** The project is designed to be compatible across multiple platforms and devices.
+- **Hashing:** User passwords are securely hashed to protect against unauthorized access.
+- **dotenv:** The project uses `dotenv` to manage environment variables and sensitive configuration data.
+- **Relationship:** The project includes database schema relationships between collections to support complex data structures.
+- **Aggregation:** The project uses MongoDB's aggregation framework to perform advanced queries and data manipulations.
 
-    b. CSS (styling)
-
-    c. Javascript (functionality)
     
-    d. Nodejs
-    
-    e. Expressjs
-    
-    f. Mongodb
+## Tech Stack
 
-# Features
+- HTML/CSS/JavaScript
+- Node.js
+- Express.js
+- MongoDB
 
-    -Home page
-    -Navbar and Footer
-    -Homepage
-    -Signup | Login
-    -User can see product Page
-    -User have to Login first for add product to cart and order
-    -User have to create account before login
-    -User can see profile page for account details and order history
-    
-# API Endpoints
+## API Endpoints
 
-    -POST /admin/register - to register an admin
-    -POST /admin/login - to login as an admin
-    -GET /cart - to retrieve all products in the cart for a specific user
-    -GET /cart/verify - to verify if the cart route is working
-    -POST /cart - to add a product to the cart
-    -DELETE /cart/:id - to remove a product from the cart by its ID
-    -DELETE /cart - to remove all products from the cart after placing an order
-    -GET /products - to retrieve all products
-    -GET /products/:id - to retrieve a specific product by its ID
-    -POST /products - to add a new product
-    -PUT /products/:id - to update a specific product by its ID
-    -DELETE /products/:id - to delete a specific product by its ID
+| HTTP Method | Endpoint | Description |
+| --- | --- | --- |
+| POST | `/user/register` | Register a new user |
+| POST | `/user/login` | Login as an user |
+| POST | `/admin/register` | Register a new admin |
+| POST | `/admin/login` | Login as an admin |
+| GET | `/products` | Retrieve all products |
+| GET | `/products/:id` | Retrieve a specific product by its ID |
+| POST | `/products` | Add a new product |
+| PUT | `/products/:id` | Update a specific product by its ID |
+| DELETE | `/products/:id` | Delete a specific product by its ID |
+| GET | `/cart` | Retrieve all products in the cart for a specific user |
+| GET | `/cart/verify` | Verify if the cart route is working |
+| POST | `/cart` | Add a product to the cart |
+| DELETE | `/cart/:id` | Remove a product from the cart by its ID |
+| DELETE | `/cart` | Remove all products from the cart after placing an order |
+| GET | `/order` | Retrieve the order history for a specific user |
+| POST | `/order` | Place an order |
+| DELETE | `/order/:id` | Delete a specific order by its ID |
+| PATCH | `/order/:id` | Update the rating for a specific order by its ID |
+
+
+## Database Schema
+
+### User
+
+| Field Name | Data Type | Required |
+| ---------- | ---------| -------- |
+| _id        | ObjectId | Yes      |
+| name       | String   | Yes      |
+| email      | String   | Yes      |
+| password   | String   | Yes      |
+
+### Cart
+
+| Field Name | Data Type | Required |
+| ---------- | ---------| -------- |
+| _id        | ObjectId | Yes      |
+| userID     | ObjectId | Yes      |
+| productid  | ObjectId | Yes      |
+
+### Order History
+
+| Field Name | Data Type | Required |
+| ---------- | ---------| -------- |
+| _id        | ObjectId | Yes      |
+| userID     | ObjectId | Yes      |
+| productid  | ObjectId | Yes      |
+| createdAt  | Date     | Yes      |
+| rate       | Number   | No       |
+| is_delivered| Boolean  | No       |
+
+### Product
+
+| Field Name        | Data Type | Required |
+| ----------------- | ---------| -------- |
+| _id               | ObjectId | Yes      |
+| category          | String   | Yes      |
+| title             | String   | Yes      |
+| subtitle          | String   | No       |
+| discounted_price  | Number   | Yes      |
+| strike_price      | Number   | Yes      |
+| discount          | String   | No       |
+| images            | String   | Yes      |
+| size              | Array    | Yes      |
+| rating            | Number   | No       |
+| rating_count      | String   | No       |
+
     
 # Glimpse and Screenshots of this project website:
 
