@@ -37,6 +37,21 @@ Hello everyone, this is a Readme for my construct week project that has been com
     -User have to create account before login
     -User can see profile page for account details and order history
     
+# API Endpoints
+
+    -POST /admin/register - to register an admin
+    -POST /admin/login - to login as an admin
+    -GET /cart - to retrieve all products in the cart for a specific user
+    -GET /cart/verify - to verify if the cart route is working
+    -POST /cart - to add a product to the cart
+    -DELETE /cart/:id - to remove a product from the cart by its ID
+    -DELETE /cart - to remove all products from the cart after placing an order
+    -GET /products - to retrieve all products
+    -GET /products/:id - to retrieve a specific product by its ID
+    -POST /products - to add a new product
+    -PUT /products/:id - to update a specific product by its ID
+    -DELETE /products/:id - to delete a specific product by its ID
+    
 # Glimpse and Screenshots of this project website:
 
 ## A. Homepage
