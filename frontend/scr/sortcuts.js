@@ -1,5 +1,5 @@
-const verifyURL = "https://gold-lively-peacock.cyclic.app/cart/verify"
-const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
+const verifyURL = "https://taupe-spider-cap.cyclic.app/cart/verify"
+const cartDataURL = "https://taupe-spider-cap.cyclic.app/cart"
 
 const get = (x)=>{
     return document.getElementById(`${x}`)

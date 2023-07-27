@@ -1,5 +1,5 @@
 import { get, create, verify } from "./sortcuts.js";
-const baseURL = "https://gold-lively-peacock.cyclic.app/user";
+const baseURL = "https://taupe-spider-cap.cyclic.app/user";
 
 
   window.onload = async ()=>{

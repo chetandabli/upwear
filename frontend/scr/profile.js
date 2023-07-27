@@ -1,5 +1,5 @@
 import { get, create, verify, getcartItem } from "./sortcuts.js";
-const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
+const orderHistoryURL = "https://taupe-spider-cap.cyclic.app/order";
 
 if(!localStorage.getItem("nameofuser")){
   location.assign("./login.html")

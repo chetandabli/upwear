@@ -1,6 +1,6 @@
 import { get, create, verify } from "./sortcuts.js";
-const baseURL = "https://gold-lively-peacock.cyclic.app/products";
-const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart"
+const baseURL = "https://taupe-spider-cap.cyclic.app/products";
+const cartDataURL = "https://taupe-spider-cap.cyclic.app/cart"
 
 let productdiv = get("products");
 
