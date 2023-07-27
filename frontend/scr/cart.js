@@ -4,6 +4,8 @@ const cartDataURL = "https://gold-lively-peacock.cyclic.app/cart";
 const orderHistoryURL = "https://gold-lively-peacock.cyclic.app/order";
 let productdiv = get("cartitemsdiv")
 
+let rowData;
+
 const fetchCartData = async()=>{
   try {
     const res = await fetch(cartDataURL, {
@@ -15,6 +17,7 @@ const fetchCartData = async()=>{
     if(data.message == "please login first!"){
       location.assign("./login.html")
     }else{
+      rowData = data;
       displayData(data)
     }
   } catch (error) {
